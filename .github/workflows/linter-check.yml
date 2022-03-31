@@ -13,5 +13,7 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
+      - name: install
+        run: make install
       - name: lint-name
         run: make lint
