@@ -1,0 +1,22 @@
+---
+
+plugins:
+  - jest
+
+env:
+  node: true
+
+settings:
+  jest: { version: 26 }
+
+extends:
+  - 'airbnb-base'
+  - 'plugin:jest/recommended'
+
+parserOptions:
+  ecmaVersion: latest
+
+rules:
+  no-console: 0
+  no-underscore-dangle: [ 2, { "allow": ["__filename", "__dirname"] } ]
+  indent: ["error", 2]
