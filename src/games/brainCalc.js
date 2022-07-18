@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
   randomNumberGenerator, signGenerator, question, answer,
 } from '../index.js';
@@ -13,17 +14,17 @@ const brainCalc = (userName) => {
     const yourAnswer = Number(answer());
     let rightAnswer = 0;
     switch (sign) {
-    case '+':
-      rightAnswer = randomNumber1 + randomNumber2;
-      break;
-    case '-':
-      rightAnswer = randomNumber1 - randomNumber2;
-      break;
-    case '*':
-      rightAnswer = randomNumber1 * randomNumber2;
-      break;
-    default:
-      console.log('What is this operator?');
+      case '+':
+        rightAnswer = randomNumber1 + randomNumber2;
+        break;
+      case '-':
+        rightAnswer = randomNumber1 - randomNumber2;
+        break;
+      case '*':
+        rightAnswer = randomNumber1 * randomNumber2;
+        break;
+      default:
+        console.log('What is this operator?');
     }
 
     if (rightAnswer === yourAnswer) {
