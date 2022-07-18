@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 import sayHello from '../src/cli.js';
 import {
-  evenMainQuestion, brainEven,
+  calcMainQuestion, brainCalc,
 } from '../src/index.js';
 
-const brainEvenGame = (mainQuestion) => {
+const brainCalcGame = (mainQuestion) => {
   const userName = sayHello();
   console.log(mainQuestion);
-  brainEven(userName);
+  brainCalc(userName);
 };
 
-brainEvenGame(evenMainQuestion);
+brainCalcGame(calcMainQuestion);
