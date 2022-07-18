@@ -1,8 +1,7 @@
 #! /usr/bin/env node
 import sayHello from '../src/cli.js';
-import {
-  evenMainQuestion, brainEven,
-} from '../src/index.js';
+import { evenMainQuestion } from '../src/index.js';
+import brainEven from '../src/games/brainEven.js';
 
 const brainEvenGame = (mainQuestion) => {
   const userName = sayHello();
