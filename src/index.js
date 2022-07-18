@@ -98,6 +98,44 @@ export const brainGcd = (userName) => {
   }
 };
 
+export const brainProgression = (userName) => {
+  let count = 0;
+
+  while (count < 3) {
+    const randomNumberCount = randomNumberGenerator(6) + 5;
+    const randomNumberBegin = randomNumberGenerator(20);
+    const randomNumberDifference = randomNumberGenerator(10);
+    const randomNumberPosition = randomNumberGenerator(randomNumberCount);
+    const generateArray = (amount) => {
+      const arr = [];
+      let defaultNumber = randomNumberBegin;
+      for (let i = 0; i <= amount; i += 1) {
+        arr.push(defaultNumber);
+        defaultNumber += randomNumberDifference;
+      }
+      return arr;
+    };
+
+    const arrayNumbers = generateArray(randomNumberCount);
+    const rightAnswer = Number(arrayNumbers.splice(randomNumberPosition, 1, '..'));
+    question(arrayNumbers.join(' '));
+    const yourAnswer = Number(answer());
+
+    if (rightAnswer === yourAnswer) {
+      console.log('Correct!');
+      count += 1;
+    } else {
+      console.log(`${yourAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.\nLet's try again, ${userName}!`);
+      break;
+    }
+  }
+
+  if (count === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
+
 export const evenMainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 export const calcMainQuestion = 'What is the result of the expression?';
 export const gcdMainQuestion = 'Find the greatest common divisor of given numbers.';
+export const progressionMainQuestion = 'What number is missing in the progression?';
