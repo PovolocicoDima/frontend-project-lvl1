@@ -135,7 +135,32 @@ export const brainProgression = (userName) => {
   }
 };
 
+export const brainPrime = (userName) => {
+  let count = 0;
+  while (count < 3) {
+    // eslint-disable-next-line max-len
+    const primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
+    const randomNumber = randomNumberGenerator(100);
+    question(randomNumber);
+    const yourAnswer = answer();
+    const rightAnswer = primeNumbers.includes(randomNumber) ? 'yes' : 'no';
+
+    if (rightAnswer === yourAnswer) {
+      console.log('Correct!');
+      count += 1;
+    } else {
+      console.log(`${yourAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.\nLet's try again, ${userName}!`);
+      break;
+    }
+  }
+
+  if (count === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
+
 export const evenMainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 export const calcMainQuestion = 'What is the result of the expression?';
 export const gcdMainQuestion = 'Find the greatest common divisor of given numbers.';
 export const progressionMainQuestion = 'What number is missing in the progression?';
+export const primeMainQuestion = 'What number is missing in the progression?';
